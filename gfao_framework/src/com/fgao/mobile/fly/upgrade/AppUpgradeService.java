@@ -52,22 +52,14 @@ public class AppUpgradeService extends Service {
 	private void checkNewVersion() {
 		ApkNewVersionCheckTask checkTask = new ApkNewVersionCheckTask(this);
 		checkTask.setUpgradeListener(appUpgradeListener);
-		new Thread(checkTask).start();
+		checkTask.run();
 	}
 
 	private void startDownloadAPK(AppVersion newVersion) {
 		ApkDownloadTask downloadTask = new ApkDownloadTask(this);
 		downloadTask.setVersion(newVersion);
 		downloadTask.setApkDownloadListener(apkDownloadListener);
-		new Thread(downloadTask).start();
-	}
-
-	private void noticeFindNewVersion() {
-		
-	}
-
-	private void sendNotice(int type, String msg) {
-
+		downloadTask.run();
 	}
 
 	AppUpgradeListener appUpgradeListener = new AppUpgradeListener() {
@@ -76,7 +68,15 @@ public class AppUpgradeService extends Service {
 		public void onFindNewVersion(AppVersion newVersion) {
 			if (newVersion != null && autoDownloadAPK) {
 				startDownloadAPK(newVersion);
+			} else {
+				noticeUser(newVersion);
 			}
+		}
+		
+
+		@Override
+		public void onError(MError error) {
+			
 		}
 	};
 
@@ -98,5 +98,9 @@ public class AppUpgradeService extends Service {
 		public void onDone(String path) {
 		}
 	};
+
+	protected void noticeUser(AppVersion newVersion) {
+		
+	}
 
 }

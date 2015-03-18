@@ -7,6 +7,7 @@ import java.io.BufferedInputStream;
 import java.io.BufferedReader;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
+import java.io.FileOutputStream;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStream;
@@ -61,6 +62,18 @@ public final class IOUtils {
 			}
 		}
 		return bos.toByteArray();
+	}
+	
+	public static void saveFile(String path,byte[] content){
+		File f = new File(path);
+		try {
+			FileOutputStream bos = new FileOutputStream(f);
+			bos.write(content);
+			bos.flush();
+			bos.close();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 	}
 	
 	public static void saveFileTmp(String _temp1,String content){

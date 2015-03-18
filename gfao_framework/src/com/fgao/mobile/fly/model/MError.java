@@ -9,6 +9,9 @@ package com.fgao.mobile.fly.model;
  */
 public class MError implements java.io.Serializable {
 	
+	public static final int UPDATE_ERROR = 90;
+	public static final int DOWNLOAD_ERROR = 91;
+	
 	public int code;
 	public int type;
 	public String msg;

@@ -6,6 +6,9 @@ package com.fgao.mobile.fly;
 import android.app.Application;
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
+import android.content.pm.PackageManager.NameNotFoundException;
 import android.preference.PreferenceManager;
 
 /**
@@ -38,6 +41,18 @@ public class MobileApplication extends Application {
 	
 	public static MobileApplication getApplication() {
 		return application;
+	}
+	
+	public PackageInfo getPackageInfo() {
+		String packageName = getPackageName();
+		try {
+			PackageInfo packageInfo = getPackageManager().getPackageInfo(packageName,
+					PackageManager.GET_CONFIGURATIONS | PackageManager.GET_ACTIVITIES);
+			return packageInfo;
+		} catch (NameNotFoundException e) {
+			e.printStackTrace();
+			return null;
+		}
 	}
 	
 	@Override

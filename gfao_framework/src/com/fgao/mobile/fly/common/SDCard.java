@@ -9,7 +9,7 @@ import android.os.Environment;
 
 /**
  * @author gaofeng
- * 2015 
+ * @since 2015 
  */
 public class SDCard {
 

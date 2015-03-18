@@ -4,6 +4,7 @@
 package com.fgao.mobile.fly.upgrade;
 
 import com.fgao.mobile.fly.model.AppVersion;
+import com.fgao.mobile.fly.model.MError;
 
 /**
  * @author gaofeng
@@ -13,5 +14,6 @@ import com.fgao.mobile.fly.model.AppVersion;
 public interface AppUpgradeListener {
 	
 	public void onFindNewVersion(AppVersion newVersion);
+	public void onError(MError error);
 
 }
