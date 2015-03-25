@@ -4,6 +4,7 @@
 package com.fgao.mobile.fly.fragment;
 
 import com.fgao.mobile.fly.LOG;
+import com.fgao.mobile.fly.R;
 import com.fgao.mobile.fly.model.MData;
 
 import android.os.Bundle;
@@ -11,6 +12,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 /**
  * @author gaofeng
@@ -29,7 +31,7 @@ public class HomeFragment extends BaseFragment {
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
 		fragmentId =  HOME_FRAGMENT;
-		return inflater.inflate(0, null);
+		return inflater.inflate(R.layout.fragment_home, null);
 	}
 	
 
@@ -46,6 +48,9 @@ public class HomeFragment extends BaseFragment {
 	@Override
 	void setUpView(View view, Bundle savedInstanceState) {
 		rootView = view;
+		if (view != null) {
+			((TextView)view.findViewById(R.id.text_title)).setText("Home Location");
+		}
 	}
 
 

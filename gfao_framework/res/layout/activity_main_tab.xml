@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+    
+    <FrameLayout
+        android:id="@+id/container"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        >
+        <TextView 
+            android:id="@+id/text_show"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Show"
+            android:layout_marginTop="20dp"
+            android:layout_gravity="center"
+            />
+    </FrameLayout>
+    
+    <LinearLayout
+        android:id="@+id/tab_ly"
+        android:layout_width="fill_parent"
+        android:layout_height="70dp"
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true"
+        android:background="@color/tab_bg"
+        android:weightSum="4"
+        >
+    </LinearLayout>
+    
+</RelativeLayout>

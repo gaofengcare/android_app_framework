@@ -2,5 +2,6 @@
 
     <string name="app_name">移动框架fgao</string>
     <string name="network_unavailable">网络不可用</string>
+    <string name="back">返回</string>
 
 </resources>
