@@ -37,6 +37,16 @@ public abstract class BaseFragment extends Fragment implements
 	public void setCallback(ActivityCallback callback) {
 		this.callback = callback;
 	}
+	
+	@Override
+	public void onViewCreated(View view, Bundle savedInstanceState) {
+		super.onViewCreated(view, savedInstanceState);
+		setUpView(view, savedInstanceState);
+	}
+
+	abstract void setUpView(View view, Bundle savedInstanceState);
+		
+	
 
 	@Override
 	public void onResume() {

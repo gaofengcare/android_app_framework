@@ -4,8 +4,8 @@
 package com.fgao.mobile.fly.activity;
 
 import com.fgao.mobile.fly.GlobalConfig;
-import com.fgao.mobile.fly.Toasts;
 import com.fgao.mobile.fly.common.NetworkState;
+import com.fgao.mobile.fly.common.Toasts;
 
 import android.app.Activity;
 import android.content.BroadcastReceiver;

@@ -4,9 +4,7 @@
 package com.fgao.mobile.fly.upgrade;
 
 import java.io.File;
-
 import org.apache.http.Header;
-
 import com.fgao.mobile.fly.GlobalConfig;
 import com.fgao.mobile.fly.common.HTTPHelper;
 import com.fgao.mobile.fly.common.IOUtils;
@@ -15,7 +13,6 @@ import com.fgao.mobile.fly.model.AppVersion;
 import com.loopj.android.http.BinaryHttpResponseHandler;
 
 import android.content.Context;
-import android.provider.Settings.Global;
 
 /**
  * @author gaofeng

@@ -22,34 +22,30 @@ public class HomeFragment extends BaseFragment {
 	static final String TAG = HomeFragment.class.getCanonicalName();
 	private static final int HOME_FRAGMENT = 10;
 
-	/**
-	 * 
-	 */
 	public HomeFragment() {
-		// TODO Auto-generated constructor stub
 	}
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
 		fragmentId =  HOME_FRAGMENT;
-		return rootView;
+		return inflater.inflate(0, null);
 	}
 	
-	/* (non-Javadoc)
-	 * @see com.fgao.mobile.fly.fragment.FragmentChangeListener#onChanged(android.support.v4.app.Fragment, android.support.v4.app.Fragment)
-	 */
+
 	@Override
 	public void onChanged(BaseFragment oldFragment, BaseFragment currFragment) {
 		LOG.Debug(TAG, "onShow:" + oldFragment);
-		if (oldFragment != null) {
-			
-		}
 	}
 
 	@Override
 	public void updateData(MData<?> data) {
 		LOG.Debug(TAG, "updateData:" + data);
+	}
+
+	@Override
+	void setUpView(View view, Bundle savedInstanceState) {
+		rootView = view;
 	}
 
 
